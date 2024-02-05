@@ -30,3 +30,16 @@ function duplicateCount(text){
   
   
   }
+
+  // alternative
+  //refactor: use a short circuit OR operator in reduce method instead of using a ternary operator  
+function duplicateCount(text){
+  //input: a string 
+   //process:loop through the string and count the occurrence of each char, 
+   // then return the count of  how many chars occurr more than once !!!
+ const hash =text.toLowerCase()
+                 .split('')
+                 .reduce((acc,curr)=> (acc[curr] =( acc[curr]||0)+1,acc ),{})
+ return Object.keys(hash).filter(k=>hash[k] >1).length
+  
+ }

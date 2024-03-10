@@ -39,4 +39,4 @@ let index = -1
     if(left===right){index = i; return true}
 } )
 return index
-}
+}   
